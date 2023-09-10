@@ -5,6 +5,7 @@ namespace Mango.Services.AuthAPI.Service
 {
 	public class AuthService : IAuthService
 	{
+
 		public Task<LoginResponseDto> Login(LoginRequestDto loginRequestDto)
 		{
 			throw new NotImplementedException();
