@@ -139,6 +139,7 @@ namespace Mango.Services.CouponAPI.Controllers
         }
 
         [HttpDelete]
+        [Route("{id:int}")]
         public ResponseDto Delete(int id)
         {
             try
@@ -147,13 +148,8 @@ namespace Mango.Services.CouponAPI.Controllers
                 //entity framework will do everything related to update -> find record and then updates
                 _db.Coupons.Remove(obj);
                 _db.SaveChanges();
-                //CouponDto couponDto = new CouponDto()
-                //{
-                //    CouponId = obj.CouponId;
-                //    ...
-                //}
-                //automapper 
-                //_response.Result = obj;
+         
+                _response.Result = obj;
 
             }
             catch (Exception e)
